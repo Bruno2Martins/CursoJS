@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        body{
+            font: normal 18pt Arial;
+        }
+        div#area {
+            background: rgb(10, 87, 10);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            border-radius: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Metodo disparando eventos por HTML</h1>
+    <div id="area" onclick="clicar()" onmouseenter="entrou()" onmouseout="sair()">
+        Interaja...
+    </div>
+    <h1>Metodo disparando eventos por JavaScript</h1>
+    <div id="area" class="area">
+        Interaja...
+    </div>
+    <hr>
+    <div>
+
+        <h4>Eventos</h4>
+        <p>mouseenter</p>
+        <p>mousemove</p>
+        <p>mousedown</p>
+        <p>mouseup</p>
+        <p>mouseout</p>
+        <p>click</p>
+        <p>Para mais eventos clique aqui <a href="https://developer.mozilla.org/en-US/docs/Web/Events">JS DOM events list</a></p>
+    </div>
+    <script>
+        //Metodo disparando eventos por HTML
+        var area = window.document.querySelector('div#area')
+        function clicar(){
+            innerText = 'Clicou'
+            area.style.background = 'red'
+        }
+        function entrou(){
+            area.innerText = 'Entrou'
+        }
+        function sair(){
+            area.innerText = 'Saiu'
+            area.style.background = "rgb(10, 87, 10)";
+        }
+        //Metodo disparando eventos por JavaScript
+        var a2 = window.document.querySelector('div.area')
+        a2.addEventListener('click', clicar2)
+        a2.addEventListener('mouseenter', entrou2)
+        a2.addEventListener('mouseout', sair2)
+        function clicar2(){
+            innerText = 'Clicou'
+            a2.style.background = 'red'
+        }
+        function entrou2(){
+            a2.innerText = 'Entrou'
+        }
+        function sair2(){
+            a2.innerText = 'Saiu'
+            a2.style.background = "rgb(10, 87, 10)";
+        }
+
+    </script>
+</body>
+
+</html>

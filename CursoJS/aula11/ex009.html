@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasileiro?</title>
+    <style>
+        body {
+            font: normal 18pt Arial;
+            text-align: center;
+            line-height: 50px; 
+        }#resposta {
+            width: 295px;
+            font: normal 18pt Arial;
+        }.botao1 {
+            background-color: rgb(187, 189, 187);
+            font-size: 15px;
+            height: 50px;
+            width: 175px;
+        }.botao1:hover {
+            background-image: linear-gradient(to right,#18a03a,#F3B562);
+        }
+    </style>
+</head>
+<body>
+    <h1>BR ou Gringo?</h1>
+    <p>De que país você é: <input type="text" name="pais" id="resposta"></p>
+    <input type="button" value="Verificar" class="botao1" onclick="consultar()">
+    <div id="res"></div>
+    <script>
+        function consultar(){
+            var txtpais = document.querySelector("input#resposta")
+            var p = txtpais.value
+            if (p =='Brasil'){
+                res.innerHTML += '<br>Você é <strong>Brasileiro</strong>'
+            }else if(p==''){
+                res.innerHTML += '<br>Você deve digitar algo'
+            }
+            else{
+                res.innerHTML += '<br>Você é <strong>estrangeiro</strong>'
+            }
+            
+        }
+    </script>
+</body>
+</html>
+
+
